@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerita Kita 🐰</title>
+    <!-- Menggunakan Google Fonts untuk font bulat dan manis -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header dengan judul romantis dan ikon kelinci -->
+    <header>
+        <h1>Cerita Kita 🐰</h1>
+        <p>Kenangan manis kita, seperti kelinci yang lucu dan hangat.</p>
+        <!-- Ikon kelinci SVG sederhana -->
+        <svg width="100" height="100" viewBox="0 0 100 100" class="bunny-icon">
+            <circle cx="50" cy="50" r="40" fill="#F6C1CC" stroke="#C8A97E" stroke-width="2"/>
+            <circle cx="35" cy="35" r="5" fill="#CFE3D4"/> <!-- Mata kiri -->
+            <circle cx="65" cy="35" r="5" fill="#CFE3D4"/> <!-- Mata kanan -->
+            <ellipse cx="50" cy="60" rx="10" ry="5" fill="#C8A97E"/> <!-- Hidung -->
+            <path d="M30 70 Q50 80 70 70" stroke="#C8A97E" stroke-width="2" fill="none"/> <!-- Mulut -->
+            <ellipse cx="25" cy="25" rx="8" ry="15" fill="#FFF7E6"/> <!-- Telinga kiri -->
+            <ellipse cx="75" cy="25" rx="8" ry="15" fill="#FFF7E6"/> <!-- Telinga kanan -->
+        </svg>
+    </header>
+
+    <!-- Galeri foto dengan card rounded -->
+    <section id="gallery">
+        <h2>Galeri Kita</h2>
+        <div class="gallery-grid">
+            <!-- Card foto (ganti src dengan foto Anda) -->
+            <div class="photo-card" onclick="openLightbox('photo1')">
+                <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Foto Kenangan 1" class="photo">
+            </div>
+            <div class="photo-card" onclick="openLightbox('photo2')">
+                <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Foto Kenangan 2" class="photo">
+            </div>
+            <div class="photo-card" onclick="openLightbox('photo3')">
+                <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Foto Kenangan 3" class="photo">
+            </div>
+            <!-- Tambahkan lebih banyak jika perlu -->
+        </div>
+    </section>
+
+    <!-- Lightbox untuk popup foto -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Foto Besar">
+    </div>
+
+    <!-- Section Kenangan Manis -->
+    <section id="memories">
+        <h2>Kenangan Manis</h2>
+        <div class="memory-item">
+            <h3>25 Desember 2022</h3>
+            <p>Hari pertama kita bertemu, seperti kelinci yang menemukan wortel favoritnya. 🥕</p>
+        </div>
+        <div class="memory-item">
+            <h3>14 Februari 2023</h3>
+            <p>Valentine pertama, penuh cinta dan tawa. Kamu selalu membuat hatiku melompat seperti kelinci.</p>
+        </div>
+        <div class="memory-item">
+            <h3>1 Januari 2024</h3>
+            <p>Tahun baru bersama, mimpi-mimpi kita seperti bintang di langit malam. ✨</p>
+        </div>
+    </section>
+
+    <!-- Tombol musik dengan ikon kelinci -->
+    <div id="music-control">
+        <button id="play-pause-btn" onclick="toggleMusic()">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20" fill="#F6C1CC" stroke="#C8A97E" stroke-width="2"/>
+                <polygon points="18,15 18,35 32,25" fill="#CFE3D4" id="play-icon"/>
+                <rect x="18" y="15" width="4" height="20" fill="#CFE3D4" id="pause-icon1" style="display:none;"/>
+                <rect x="26" y="15" width="4" height="20" fill="#CFE3D4" id="pause-icon2" style="display:none;"/>
+            </svg>
+        </button>
+        <audio id="bg-music" loop>
+            <source src="romantic-music.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung audio.
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+/* Reset dasar untuk konsistensi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body dengan background pola halus (bintang, hati, wortel kecil) menggunakan CSS */
+body {
+    font-family: 'Quicksand', sans-serif; /* Font bulat dan manis */
+    background-color: #FFF7E6; /* Cream/Ivory */
+    background-image: 
+        radial-gradient(circle, #F6C1CC 1px, transparent 1px), /* Bintang kecil dengan soft pink */
+        radial-gradient(circle, #CFE3D4 1px, transparent 1px), /* Hati kecil dengan sage green */
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><text y="8" font-size="8" fill="%23C8A97E">🥕</text></svg>'); /* Wortel kecil dengan pastel brown */
+    background-size: 50px 50px, 70px 70px, 100px 100px; /* Ukuran pola */
+    background-position: 0 0, 25px 25px, 50px 50px;
+    color: #C8A97E; /* Pastel Brown untuk teks */
+    line-height: 1.6;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+    animation: fadeIn 1s ease-in; /* Animasi fade-in saat load */
+}
+
+/* Animasi fade-in untuk body */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header dengan judul dan ikon kelinci */
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #F6C1CC, #CFE3D4); /* Gradien soft pink ke sage green */
+    border-radius: 0 0 50px 50px; /* Rounded bottom seperti telinga kelinci */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    animation: float 3s ease-in-out infinite; /* Animasi float lembut */
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #FFF7E6; /* Cream/Ivory */
+    margin-bottom: 10px;
+}
+
+.bunny-icon {
+    font-size: 3rem;
+    animation: bounce 2s infinite; /* Bounce ringan seperti kelinci */
+}
+
+/* Animasi float untuk header */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Animasi bounce untuk ikon */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Galeri foto */
+.gallery {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #F6C1CC; /* Soft Pink */
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-card {
+    width: 200px;
+    height: 200px;
+    border-radius: 50px; /* Rounded seperti telinga kelinci */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: scale(1.05); /* Efek hover ringan */
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Section Kenangan Manis */
+.memories {
+    padding: 40px 20px;
+    background-color: #CFE3D4; /* Sage Green lembut */
+    border-radius: 50px 50px 0 0; /* Rounded top */
+    margin-top: 20px;
+}
+
+.memories h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FFF7E6; /* Cream/Ivory */
+}
+
+.memory-item {
+    background-color: #FFF7E6; /* Cream/Ivory */
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    animation: fadeIn 1s ease-in; /* Fade-in untuk setiap item */
+}
+
+.memory-item h3 {
+    color: #F6C1CC; /* Soft Pink */
+    margin-bottom: 10px;
+}
+
+/* Lightbox popup */
+.lightbox {
+    display: none; /* Tersembunyi secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFF7E6;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Musik player */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.bunny-btn {
+    background: #F6C1CC; /* Soft Pink */
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease;
+}
+
+.bunny-btn:hover {
+    transform: scale(1.1); /* Efek hover */
+}
+
+/* Responsivitas untuk mobile */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    .photo-card {
+        width: 150px;
+        height: 150px;
+    }
+    .memory-item {
+        padding: 15px;
+    }
+}
